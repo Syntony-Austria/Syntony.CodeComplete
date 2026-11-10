@@ -1,0 +1,12 @@
+--- a/requirements.md
++++ b/requirements-v2.md
+@@ -11 +11 @@
+-LEND-005: A child pays half, rounded down to whole cents.
++LEND-005: A child pays half, rounded up to whole cents.
+@@ -15 +15,2 @@
+-LEND-009: The card on the loan pays, whoever returns the book.
++LEND-009: The card on the loan pays; if an adult returns a child's
++  book, the adult's card pays.
+@@ -28 +29 @@
+-| LEND-005 | 5         | Child  | no        | 62    |
++| LEND-005 | 5         | Child  | no        | 63    |

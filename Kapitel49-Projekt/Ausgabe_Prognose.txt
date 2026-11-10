@@ -1,0 +1,15 @@
+last 12 weeks: 5 2 3 4 2 3 2 6 2 2 5 3
+mean 3,25 pieces a week
+by average: 10 weeks
+50 % of 10000 runs done within 10 weeks
+85 % of 10000 runs done within 11 weeks
+95 % of 10000 runs done within 12 weeks
+  6 weeks    27 #
+  7 weeks   355 ####
+  8 weeks  1489 ###############
+  9 weeks  2801 #############################
+ 10 weeks  2772 ############################
+ 11 weeks  1767 ##################
+ 12 weeks   651 #######
+ 13 weeks   128 ##
+ 14 weeks    10 #

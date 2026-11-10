@@ -11,7 +11,7 @@ for probe in sorted((HERE / "Proben").glob("*.cs")):
     if work.exists():
         shutil.rmtree(work, ignore_errors=True)
     work.mkdir(parents=True)
-    project = (HERE / "Kapitel49.csproj").read_text(encoding="utf-8")
+    project = (HERE / "Kapitel51.csproj").read_text(encoding="utf-8")
     (work / "p.csproj").write_text(project, encoding="utf-8")
     shutil.copy(HERE / "ProbeTests.cs", work)
     shutil.copy(probe, work / "Generated.cs")

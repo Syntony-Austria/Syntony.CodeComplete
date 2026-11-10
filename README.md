@@ -30,7 +30,7 @@ Ist alles grün, bist du bereit. Jeder Kapitelordner steht für sich; du brauchs
   `Kapitel37-Doku/Probe/BrokenDocs` (Dokumentation mit Fehlern),
   `Kapitel37-Doku/Probe/Undocumented` (fehlende Dokumentation, CS1591),
   `Kapitel41-Betrieb/Lieferkette/Verbraucher` (Verbraucher der Paketmessung) und
-  `Kapitel49-VibeCoding` (Vorlage für `Measure-Proben.py`, das die Proben einsetzt).
+  `Kapitel51-VibeCoding` (Vorlage für `Measure-Proben.py`, das die Proben einsetzt).
 - Die Root-Dateien `Directory.Build.props`, `Directory.Build.targets`, `Directory.Packages.props`,
   `NuGet.config` und `.editorconfig` sind absichtlich leer oder minimal. Sie schirmen die Kapitel
   gegen Einstellungen aus übergeordneten Ordnern ab, damit ein Klon überall gleich baut.
@@ -89,10 +89,12 @@ Ist alles grün, bist du bereit. Jeder Kapitelordner steht für sich; du brauchs
 | `Kapitel45-Refactoring` | 45 · Refactoring und Debugging als wissenschaftliche Methode |
 | `Kapitel46-Review` | 46 · Code-Review |
 | `Kapitel47-Team` | 47 · Im Team: Vereinbarungen, die halten |
-| `Kapitel48-Agenten` | 48 · Mit KI-Agenten programmieren |
-| `Kapitel49-VibeCoding` | 49 · Vibe-Coding: was es leistet und wo es bricht |
+| `Kapitel48-Anforderungen` | 48 · Anforderungen, die ein Test prüft |
+| `Kapitel49-Projekt` | 49 · Projektführung mit Messwerten: schätzen, planen, steuern |
+| `Kapitel50-Agenten` | 50 · Mit KI-Agenten programmieren |
+| `Kapitel51-VibeCoding` | 51 · Vibe-Coding: was es leistet und wo es bricht |
 
-Die Kapitel 50 und 51 haben keinen eigenen Beispielcode.
+Die Kapitel 52 und 53 haben keinen eigenen Beispielcode.
 
 ## Lizenz
 
