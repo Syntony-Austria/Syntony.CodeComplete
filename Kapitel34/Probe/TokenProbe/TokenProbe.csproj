@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- A token parameter that nothing uses, see UnusedToken.cs.
+       dotnet build -p:AnalysisMode=All: no CA2016.
+       jb inspectcode TokenProbe.csproj, severity SUGGESTION:
+       UnusedParameter.Global and UnusedParameter.Local. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>

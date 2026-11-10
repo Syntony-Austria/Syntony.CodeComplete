@@ -1,0 +1,12 @@
+ReSharper command line tools 2026.2.4.1, 10 November 2026, .NET SDK 10.0.403
+jb inspectcode Probe.csproj --severity=SUGGESTION (HINT adds the lines marked +)
+
+Change.cs(3) warning CheckNamespace
+Change.cs(5) note ClassNeverInstantiated.Global
+Change.cs(5) warning NotAccessedPositionalProperty.Global
+Change.cs(5) warning NotAccessedPositionalProperty.Global
+Change.cs(7) note ClassNeverInstantiated.Global
+Change.cs(22) note UnusedType.Global
+Change.cs(24) note UnusedMember.Global
++ Change.cs(28) note ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
++ Change.cs(30) note InvertIf

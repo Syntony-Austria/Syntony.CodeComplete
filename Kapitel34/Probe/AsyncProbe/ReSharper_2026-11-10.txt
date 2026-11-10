@@ -1,0 +1,20 @@
+ReSharper command line tools 2026.2.4.1, 10 November 2026, .NET SDK 10.0.403
+jb inspectcode AsyncProbe.csproj --severity=SUGGESTION (HINT adds the lines marked +)
+
+AsyncBugs.cs(1) warning CheckNamespace
+AsyncBugs.cs(4) note UnusedType.Global
+AsyncBugs.cs(13) note PreferConcreteValueOverDefault
+AsyncBugs.cs(13) note UnusedMember.Global
+AsyncBugs.cs(16) note UnusedMember.Global
+AsyncBugs.cs(17) note PreferConcreteValueOverDefault
+AsyncBugs.cs(20) warning AsyncVoidMethod
+AsyncBugs.cs(20) note UnusedMember.Global
+AsyncBugs.cs(23) note UnusedMember.Global
+AsyncBugs.cs(25) warning CSharpWarnings::CS4014
+AsyncBugs.cs(30) note UnusedMember.Global
+AsyncBugs.cs(37) note UnusedMember.Global
+AsyncBugs.cs(41) note UnusedMember.Global
+AsyncBugs.cs(48) note UnusedMember.Global
+AsyncBugs.cs(48) note UnusedParameter.Global
+AsyncBugs.cs(49) note MethodSupportsCancellation
++ AsyncBugs.cs(49) note CA2016
