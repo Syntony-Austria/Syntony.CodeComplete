@@ -70,4 +70,13 @@ public sealed class ArchitectureTests
             Assert.That(NamespaceCycles.Find(ArchitectureRules.Domain), Is.Empty);
         });
     }
+
+    [Test]
+    public void NamespacesAreComparedAsPrefixes()
+    {
+        IReadOnlyList<(string, string)> rings =
+            NamespaceCycles.Find(typeof(ArchitectureTests).Assembly);
+
+        Assert.That(rings, Does.Contain(("Library", "Library.PrefixProbe")));
+    }
 }

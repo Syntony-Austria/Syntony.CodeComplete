@@ -31,7 +31,7 @@ public sealed class RetryTests
     }
 }
 
-// Passes alone and in this order. Depends on a neighbour.
+// Passes in this order, fails alone. Depends on a neighbour.
 [TestFixture]
 public sealed class OrderTests
 {

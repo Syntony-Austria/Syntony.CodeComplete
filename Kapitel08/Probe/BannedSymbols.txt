@@ -1,0 +1,3 @@
+M:System.Threading.Thread.Sleep(System.Int32);Use a delay from TimeProvider.
+M:System.Console.WriteLine(System.String);Libraries do not write to the console.
+P:System.Threading.Tasks.Task`1.Result;Use await.

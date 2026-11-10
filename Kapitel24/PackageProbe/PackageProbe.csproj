@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Package validation against an older package; see PackageProbe.cs. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnablePackageValidation>true</EnablePackageValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RemoveProbe)' == 'true'">
+    <DefineConstants>$(DefineConstants);REMOVE_PROBE</DefineConstants>
+    <Baseline>obj\baseline\PackageProbe.1.0.0.nupkg</Baseline>
+    <PackageValidationBaselinePath>$(Baseline)</PackageValidationBaselinePath>
+  </PropertyGroup>
+</Project>

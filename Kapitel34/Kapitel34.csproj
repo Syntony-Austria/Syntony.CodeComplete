@@ -12,4 +12,8 @@
     <PackageReference Include="NUnit" Version="4.4.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="5.2.0" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- Probe/AsyncProbe is its own project; build it alone. -->
+    <Compile Remove="Probe\**" />
+  </ItemGroup>
 </Project>

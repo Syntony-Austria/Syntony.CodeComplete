@@ -97,4 +97,18 @@ public sealed class SecurityTests
             Assert.That(ResetToken.Matches("abc", "abd"), Is.False);
         });
     }
+
+    // .NET 10 has removed the risk: BinaryFormatter only throws.
+    [Test]
+    public void TheBinaryFormatterIsGone()
+    {
+#pragma warning disable SYSLIB0011 // The test is about the obsolete type.
+        System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter =
+            new();
+#pragma warning restore SYSLIB0011
+        using MemoryStream stream = new();
+
+        Assert.Throws<PlatformNotSupportedException>(
+            () => formatter.Serialize(stream, "loan"));
+    }
 }

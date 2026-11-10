@@ -14,5 +14,7 @@
   <ItemGroup>
     <!-- Proof the compiler sees the order: -p:OrderProbe=true must fail. -->
     <Compile Remove="OrderProbe.cs" Condition="'$(OrderProbe)' != 'true'" />
+    <!-- Run the project RecursionProbe: "Stack overflow.", no catch. -->
+    <Compile Remove="RecursionProbe\**" />
   </ItemGroup>
 </Project>

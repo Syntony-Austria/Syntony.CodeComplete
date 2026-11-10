@@ -137,4 +137,22 @@ public sealed class BoundaryTests
             Assert.Throws<ArgumentNullException>(() => Ensure.LengthOf(null));
         });
     }
+
+    // JetBrains attributes carry [Conditional("JETBRAINS_ANNOTATIONS")].
+    // dotnet test -> 0 attributes on Ensure.HasValue. With
+    // -p:DefineConstants="JETBRAINS_ANNOTATIONS%3BDEBUG%3BTRACE" -> 1.
+    [Test]
+    public void JetBrainsAttributesStayOutOfTheAssemblyByDefault()
+    {
+#if JETBRAINS_ANNOTATIONS
+        const int Expected = 1;
+#else
+        const int Expected = 0;
+#endif
+        int count = typeof(Ensure).GetMethod(nameof(Ensure.HasValue))!
+            .GetCustomAttributes(false)
+            .Count(a => a.GetType().Namespace == "JetBrains.Annotations");
+
+        Assert.That(count, Is.EqualTo(Expected));
+    }
 }

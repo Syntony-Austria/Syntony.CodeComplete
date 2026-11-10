@@ -11,7 +11,8 @@ public class LendableBook(string title)
 public sealed class ReferenceBookTangled(string title) : LendableBook(title)
 {
     public override int LoanDays() =>
-        throw new NotSupportedException("Reference books stay in the library.");
+        throw new NotSupportedException(
+            "Reference-only copies stay in the library.");
 }
 
 public sealed record Book(string Title, int? LoanDays)

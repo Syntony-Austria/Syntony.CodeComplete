@@ -7,7 +7,8 @@ import os, shutil, subprocess, sys
 
 ROOT = sys.argv[1]
 CSPROJ = '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0</TargetFramework><Nullable>enable</Nullable>%s</PropertyGroup>%s</Project>'
-BASE = """namespace Rules;
+BASE = """[assembly: System.Reflection.AssemblyVersion("1.5.0.0")]
+namespace Rules;
 public sealed record Tariff(int Cents);
 public sealed class Options { public int Cents { get; init; } = 25; }
 public interface IRule { int Days(); }
@@ -22,6 +23,7 @@ public class Fees
     public static string Describe(Kind kind) => kind.ToString();
     public static int Gone() => 1;
     public static string? Note() => null;
+    public static string Name() => "x";
     public static int WithDefault(int rate = 25) => rate;
 }
 """
@@ -36,6 +38,12 @@ public static class Program
     }
 }
 """
+# The library sets its own AssemblyVersion, so the SDK must not add one.
+LIB_PROPS = ("<GenerateAssemblyVersionAttribute>false"
+             "</GenerateAssemblyVersionAttribute>")
+OBSOLETE_OLD = "public static int Gone() => 1;"
+OBSOLETE_WARN = '[System.Obsolete("Use For.")] '
+OBSOLETE_ERROR = '[System.Obsolete("Use For.", true)] '
 CASES = [
     ("neue Methode", "public static int Gone() => 1;", "public static int Gone() => 1; public static int More() => 2;", "Fees.For(1)"),
     ("Parameter umbenannt", "Named(int daysLate) => daysLate", "Named(int late) => late", "Fees.Named(daysLate: 1)"),
@@ -51,6 +59,14 @@ CASES = [
     ("Klasse mit init bekommt eine Eigenschaft", "= 25; }", "= 25; public int Vat { get; init; } }", "new Options().Cents"),
     ("Standardwert geändert", "int rate = 25) => rate", "int rate = 30) => rate", "Fees.WithDefault()"),
     ("Enum-Wert ergänzt", "Book, Journal }", "Book, Journal, Map }", "Fees.Describe(Kind.Book)"),
+    ("Assembly-Version höher", '"1.5.0.0"', '"2.0.0.0"', "Fees.For(1)"),
+    ("Assembly-Version niedriger", '"1.5.0.0"', '"1.0.0.0"', "Fees.For(1)"),
+    ("Rückgabe wird string?", "string Name()", "string? Name()",
+     "Fees.Name().Length"),
+    ("[Obsolete] ergänzt", OBSOLETE_OLD, OBSOLETE_WARN + OBSOLETE_OLD,
+     "Fees.Gone()"),
+    ("[Obsolete] als Fehler", OBSOLETE_OLD, OBSOLETE_ERROR + OBSOLETE_OLD,
+     "Fees.Gone()"),
 ]
 
 
@@ -64,7 +80,7 @@ def sh(args, cwd):
 def setup(case_dir, lib_source, expr):
     lib, app = os.path.join(case_dir, "Lib"), os.path.join(case_dir, "App")
     os.makedirs(lib), os.makedirs(app)
-    open(os.path.join(lib, "Lib.csproj"), "w").write(CSPROJ % ("", ""))
+    open(os.path.join(lib, "Lib.csproj"), "w").write(CSPROJ % (LIB_PROPS, ""))
     open(os.path.join(lib, "F.cs"), "w", encoding="utf-8").write(lib_source)
     ref = '<ItemGroup><ProjectReference Include="../Lib/Lib.csproj"/></ItemGroup>'
     open(os.path.join(app, "App.csproj"), "w").write(CSPROJ % ("<OutputType>Exe</OutputType>", ref))
@@ -99,7 +115,9 @@ for i, (name, old, new, expr) in enumerate(CASES):
     r = sh(["dotnet", "build", "--nologo", "-v", "q", "-o", os.path.join(d, "out2")], app)
     if r.returncode == 0:
         after = sh(["dotnet", os.path.join(d, "out2", "App.dll")], d).stdout
-        source = f"übersetzt ({after})"
+        warned = sorted({w.rstrip(":") for w in r.stdout.split()
+                         if w.startswith("CS") and w.rstrip(":")[2:].isdigit()})
+        source = f"übersetzt ({after})" + "".join(", Warnung " + w for w in warned)
     else:
         codes = sorted({w.rstrip(":") for w in r.stdout.split() if w.startswith("CS") and w.rstrip(":")[2:].isdigit()})
         source = ", ".join(codes)

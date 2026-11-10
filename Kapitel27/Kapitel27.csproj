@@ -13,5 +13,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Golden\*.json" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Remove="MultiTarget\**" />
   </ItemGroup>
 </Project>

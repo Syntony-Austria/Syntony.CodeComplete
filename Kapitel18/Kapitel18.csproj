@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <IsPackable>false</IsPackable>
+    <!-- Keeps [MustDisposeResource] in the compiled DLL, not just the source. -->
+    <DefineConstants>$(DefineConstants);JETBRAINS_ANNOTATIONS</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
@@ -16,5 +18,7 @@
   <ItemGroup>
     <!-- Which rules find a leak? dotnet build -p:DisposeProbe=true -p:AnalysisMode=All -->
     <Compile Remove="DisposeProbe.cs" Condition="'$(DisposeProbe)' != 'true'" />
+    <!-- What ReSharper reports: see the header of LeakProbe/LeakProbe.cs. -->
+    <Compile Remove="LeakProbe\**" />
   </ItemGroup>
 </Project>

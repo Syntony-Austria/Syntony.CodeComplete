@@ -14,5 +14,13 @@
   <ItemGroup>
     <!-- Proof the types bite: dotnet build -p:TypeProbe=true must fail. -->
     <Compile Remove="TypeProbe.cs" Condition="'$(TypeProbe)' != 'true'" />
+    <!-- -p:SwitchProbe=true must fail: CS8509, CS8524, CS8509. -->
+    <Compile Remove="SwitchProbe.cs" Condition="'$(SwitchProbe)' != 'true'" />
+    <!-- -p:ImplicitProbe=true must build: the swap compiles silently. -->
+    <Compile Remove="ImplicitProbe.cs" Condition="'$(ImplicitProbe)' != 'true'" />
+    <!-- -p:GenericIdProbe=true must fail: CS1503. -->
+    <Compile Remove="GenericIdProbe.cs" Condition="'$(GenericIdProbe)' != 'true'" />
+    <!-- Run the project OverflowProbe: it prints OverflowException. -->
+    <Compile Remove="OverflowProbe\**" />
   </ItemGroup>
 </Project>

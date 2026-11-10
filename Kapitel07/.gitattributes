@@ -1,0 +1,3 @@
+# Keep C# files with LF, so a clone on Windows reports the same
+# line and column as the build output printed in the book (Listing 42).
+*.cs text eol=lf

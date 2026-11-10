@@ -1,0 +1,3 @@
+[*.cs]
+# CA1502 is off unless switched on; MetricsProbe.cs needs it.
+dotnet_diagnostic.CA1502.severity = warning

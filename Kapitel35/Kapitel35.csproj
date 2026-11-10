@@ -13,4 +13,8 @@
     <PackageReference Include="NUnit" Version="4.4.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="5.2.0" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- Probe/LockProbe and Probe/WaitProbe are own projects; build alone. -->
+    <Compile Remove="Probe\**" />
+  </ItemGroup>
 </Project>

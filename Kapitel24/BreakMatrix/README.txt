@@ -1,1 +1,3 @@
-Baut Bibliothek und Anwendung und tauscht Fassungen: siehe Quellenliste_Kap22-24.md und das Messskript im Text.
+Builds a library and an app, swaps library versions and rebuilds the app.
+Usage: python Measure-Breaks.py <empty scratch folder>
+Prints one line per case: case | old app, new library | rebuild.

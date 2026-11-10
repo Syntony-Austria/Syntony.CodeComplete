@@ -16,4 +16,8 @@
     <Compile Remove="Library.Fees\**" />
     <ProjectReference Include="Library.Fees/Library.Fees.csproj" />
   </ItemGroup>
+  <!-- Deliberately red probe: dotnet test -p:RetryProbe=true -->
+  <ItemGroup Condition="'$(RetryProbe)' != 'true'">
+    <Compile Remove="Probe\**" />
+  </ItemGroup>
 </Project>

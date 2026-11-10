@@ -13,6 +13,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="SpanCounter\**" />
+    <!-- A const is copied into the caller: bash ConstProbe/run.sh -> 3 3, 3 7. -->
+    <Compile Remove="ConstProbe\**" />
     <!-- Proof the rules bite: dotnet build -p:VariableProbe=true reports them;
          add -p:EnforceCodeStyleInBuild=true for the IDE rules in .editorconfig. -->
     <Compile Remove="VariableProbe.cs" Condition="'$(VariableProbe)' != 'true'" />

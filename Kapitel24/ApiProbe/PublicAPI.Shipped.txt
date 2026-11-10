@@ -1,0 +1,3 @@
+#nullable enable
+Library.Lending.Fees
+static Library.Lending.Fees.Named(int daysLate) -> int

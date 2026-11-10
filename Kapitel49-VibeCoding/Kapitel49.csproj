@@ -1,4 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <!-- Template for Measure-Proben.py and Measure-Analyzer.py: they copy it
+       next to ProbeTests.cs and one solution from Proben. It does not
+       build on its own (Auszug-knapp-1.cs is a printed excerpt). -->
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>

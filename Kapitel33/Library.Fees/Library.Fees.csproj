@@ -4,4 +4,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <!-- Coverage probe: -p:CoverageProbe=true adds a class without tests,
+       -p:ExcludeProbe=true hides it with [ExcludeFromCodeCoverage]. -->
+  <ItemGroup Condition="'$(CoverageProbe)' != 'true'">
+    <Compile Remove="Probe\**" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(ExcludeProbe)' == 'true'">
+    <DefineConstants>$(DefineConstants);EXCLUDE_PROBE</DefineConstants>
+  </PropertyGroup>
 </Project>

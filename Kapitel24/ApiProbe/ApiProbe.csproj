@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The public surface as text files; see ApiProbe.cs. Not a test project. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(NewMemberProbe)' == 'true'">
+    <DefineConstants>$(DefineConstants);NEW_MEMBER_PROBE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RenameProbe)' == 'true'">
+    <DefineConstants>$(DefineConstants);RENAME_PROBE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers"
+      Version="3.3.4" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+</Project>

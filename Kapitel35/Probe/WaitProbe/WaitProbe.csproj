@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Which blocking waits does a SynchronizationContext get told about?
+       dotnet run -> Task.Wait, ManualResetEventSlim.Wait and
+       SemaphoreSlim.Wait each notify at least once; Thread.Sleep does not.
+       Measured on Windows only. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>

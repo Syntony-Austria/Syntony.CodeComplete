@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="LogCost\**" />
+    <Compile Remove="LogProbe\**" />
   </ItemGroup>
 </Project>

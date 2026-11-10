@@ -15,5 +15,7 @@
     <Compile Remove="ClassStats\**" />
     <!-- Proof that sealed bites: dotnet build -p:SealedProbe=true must fail. -->
     <Compile Remove="SealedProbe.cs" Condition="'$(SealedProbe)' != 'true'" />
+    <!-- -p:UnsealedProbe=true builds; add -p:AnalysisMode=Recommended: CA1852. -->
+    <Compile Remove="UnsealedProbe.cs" Condition="'$(UnsealedProbe)' != 'true'" />
   </ItemGroup>
 </Project>

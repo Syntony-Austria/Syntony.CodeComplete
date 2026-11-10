@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Eight known async bugs in AsyncBugs.cs, one per row of the table.
+       dotnet build -> VSTHRD002 (twice), VSTHRD100, CS4014.
+       dotnet build -p:AnalysisMode=Minimum -> adds CA2016.
+       dotnet build -p:AnalysisMode=All -> adds CA2007 and CA1849.
+       The discarded task (_ =) is reported by none of them. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers"
+                      Version="18.12.1" />
+  </ItemGroup>
+</Project>

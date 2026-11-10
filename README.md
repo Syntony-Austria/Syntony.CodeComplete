@@ -26,10 +26,11 @@ Ist alles grün, bist du bereit. Jeder Kapitelordner steht für sich; du brauchs
 
 - **`Tangled`** im Dateinamen heißt: absichtlich verhedderter Code, den das Kapitel verbessert.
 - **`Probe`** im Namen heißt: Diese Datei oder dieser Ordner soll ein Gate auslösen. Ein roter Build ist dort das richtige Ergebnis.
-- Drei Projekte bauen absichtlich nicht für sich allein:
+- Vier Projekte bauen absichtlich nicht für sich allein:
   `Kapitel37-Doku/Probe/BrokenDocs` (Dokumentation mit Fehlern),
+  `Kapitel37-Doku/Probe/Undocumented` (fehlende Dokumentation, CS1591),
   `Kapitel41-Betrieb/Lieferkette/Verbraucher` (Verbraucher der Paketmessung) und
-  `Kapitel49-VibeCoding` (Proben, die scheitern sollen).
+  `Kapitel49-VibeCoding` (Vorlage für `Measure-Proben.py`, das die Proben einsetzt).
 - Die Root-Dateien `Directory.Build.props`, `Directory.Build.targets`, `Directory.Packages.props`,
   `NuGet.config` und `.editorconfig` sind absichtlich leer oder minimal. Sie schirmen die Kapitel
   gegen Einstellungen aus übergeordneten Ordnern ab, damit ein Klon überall gleich baut.

@@ -13,5 +13,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="RoutineStats\**" />
+    <!-- Defaults are copied into the caller: bash OptionalProbe/run.sh. -->
+    <Compile Remove="OptionalProbe\**" />
   </ItemGroup>
 </Project>

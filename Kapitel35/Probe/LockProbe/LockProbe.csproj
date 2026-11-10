@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Locks that anyone outside can take, and a Lock seen as object.
+       dotnet build -> CS9216 once; no CA2002, the rule is off by default.
+       dotnet build -p:AnalysisMode=All -> CA2002 three times
+       (this, string, typeof) plus CS9216. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>

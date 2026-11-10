@@ -1,6 +1,8 @@
 #!/bin/bash
-# Builds a throwaway repository with 64 commits, one of which breaks a rule, and lets git bisect find it.
-# Usage: bash bisect-demo.sh <empty-target-directory>. Never run it inside an existing repository.
+# Builds a throwaway repository with 64 commits, one of which breaks a rule,
+# and lets git bisect find it.
+# Usage: bash bisect-demo.sh <empty-target-directory>.
+# Never run it inside an existing repository.
 set -e
 quelle="$(cd "$(dirname "$0")" && pwd)"
 ziel="$1"
@@ -28,6 +30,8 @@ done
 
 git bisect start HEAD "$gut"
 git bisect run bash "$quelle/bisect-check.sh" > bisect.log 2>&1 || true
-grep -E "^Bisecting:|is the first bad commit" bisect.log
+grep -E "^Bisecting:" bisect.log
+# Newer git writes "first 'bad' commit", older git "first bad commit".
+sed -n "/is the first .\?bad.\? commit/,/files\? changed/p" bisect.log
 git bisect log | grep -c "^git bisect \(good\|bad\)"
 git bisect reset -q 2>/dev/null || git bisect reset

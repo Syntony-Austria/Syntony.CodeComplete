@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Measurements from chapter 8, one switch per probe. A plain build compiles
+       nothing and stays green. Each probe file names its call and result. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers"
+                      Version="3.3.4"
+                      PrivateAssets="all" />
+    <ProjectReference Include="..\Rules\Rules.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
+    <AdditionalFiles Include="BannedSymbols.txt" />
+    <AdditionalFiles Include="CodeMetricsConfig.txt" />
+    <Compile Remove="BannedProbe.cs" Condition="'$(BannedProbe)' != 'true'" />
+    <Compile Remove="CryptoProbe.cs" Condition="'$(CryptoProbe)' != 'true'" />
+    <Compile Remove="MetricsProbe.cs" Condition="'$(MetricsProbe)' != 'true'" />
+    <Compile Remove="RecordProbe.cs" Condition="'$(RecordProbe)' != 'true'" />
+    <Compile Remove="SuppressProbe.cs" Condition="'$(SuppressProbe)' != 'true'" />
+  </ItemGroup>
+</Project>
