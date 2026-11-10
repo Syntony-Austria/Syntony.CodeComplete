@@ -25,9 +25,11 @@ public sealed class DeskTests
         Loan loan = desk.Lend("m-2", MemberKind.Child, false);
 
         // The card says Adult now; the loan keeps the kind from lending.
+        // The amount belongs to LEND-005, so it comes from LoanFee.
         clock.Now = LendDay.AddDays(28 + 5);
 
-        Assert.That(desk.Return(loan, "m-2").Cents, Is.EqualTo(62));
+        Assert.That(desk.Return(loan, "m-2").Cents,
+            Is.EqualTo(LoanFee.InCents(5, MemberKind.Child, false)));
     }
 
     [Test, Requirement("LEND-009")]

@@ -21,6 +21,7 @@ public sealed class ForecastTests
     {
         Assert.That(Weekly.Sum(), Is.EqualTo(157));
         Assert.That(Weekly.Count(w => w == 0), Is.EqualTo(4));
+        Assert.That(Weekly[0], Is.Zero, "the first week is the start week");
         Assert.That(Weekly[^12..].Average(), Is.EqualTo(3.25));
     }
 
