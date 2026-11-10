@@ -1,0 +1,3 @@
+<!-- Stops a parent Directory.Packages.props from switching on central package management. -->
+<!-- Chapter folders that teach central package management (Kapitel09, AnhangB) bring their own. -->
+<Project />

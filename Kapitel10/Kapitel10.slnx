@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/Library.Lending.csproj" />
+  <Project Path="tests/Library.Lending.Tests.csproj" />
+</Solution>

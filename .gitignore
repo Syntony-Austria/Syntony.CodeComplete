@@ -1,0 +1,171 @@
+## Visual Studio / .NET / WinUI build and tool artifacts.
+## See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# ── User-specific files ────────────────────────────────────────────────────
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# ── Build output ───────────────────────────────────────────────────────────
+artifacts/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Cc]ode[Aa]nalysis/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Syntony buildcounter files
+*.Syntony.Property
+
+# Visual Studio cache/options directory
+.vs/
+Generated\ Files/
+
+# ── Test runners ───────────────────────────────────────────────────────────
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# ── .NET Core / Artifacts SDK ──────────────────────────────────────────────
+project.lock.json
+project.fragment.lock.json
+.packages/
+
+# ── Binary intermediates ───────────────────────────────────────────────────
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pdb
+*.ipdb
+*.tmp
+*.tmp_proj
+*.log
+*.tlog
+
+# ── WinUI / MSIX packaging ─────────────────────────────────────────────────
+AppPackages/
+BundleArtifacts/
+AppX/
+*.appx
+*.appxbundle
+*.appxupload
+*.xbf
+*.build.appxrecipe
+resources.pri
+
+# ── ReSharper / DotCover ───────────────────────────────────────────────────
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.dotCover
+
+# ── Coverage ───────────────────────────────────────────────────────────────
+coverage*.json
+coverage*.xml
+coverage*.info
+*.coverage
+*.coveragexml
+
+# ── NCrunch ────────────────────────────────────────────────────────────────
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# ── Secrets / user appsettings ─────────────────────────────────────────────
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.user.json
+secrets.json
+*.secrets.json
+
+# ── NuGet ──────────────────────────────────────────────────────────────────
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+# Generated NuGet imports only (the *.nuget.g.* ones, always under obj/). Hand-written
+# *.NuGet.props / *.NuGet.targets modules are NOT matched and stay version-controlled.
+*.nuget.g.props
+*.nuget.g.targets
+.nuget/
+
+# ── MSBuild binary log ─────────────────────────────────────────────────────
+*.binlog
+
+# ── VS Code ────────────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ── JetBrains Rider ────────────────────────────────────────────────────────
+.idea/
+*.sln.iml
+
+# ── OS ─────────────────────────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+~$*
+*~
+
+# ── Claude Code & Council — never commit ───────────────────────────────────
+# AI instructions (CLAUDE.md), local agent config, skill artifacts, Council CDRs.
+# CLAUDE.md is deliberately NOT ignored (changed 2026-08-11). It used to stand on this line,
+# grouped with .claude/ and .claude.json under "never commit" - but that grouping was a
+# category error: those are session state and tool config, while CLAUDE.md is the densest
+# hand-written documentation in the repo (measured in the Sdk repo: 25 KB, more substance than
+# all 37 of its Docs guides combined). Untracked meant no history, no diff, no rollback and -
+# the decisive part - no ATOMICITY: one change routinely touches a target, CHANGELOG.md and
+# CLAUDE.md, and two of those landed in a commit while the third did not. That is the same
+# drift mechanism the 2026-07-15 Harness move was made to stop, and the workspace root already
+# decided it this way (its .gitignore re-allows /CLAUDE.md explicitly).
+.claude/
+.council/
+.clauderc
+.claude.json
+.anthropic/
+
+# ── Security — Keys, Certs, Secrets ────────────────────────────────────────
+*.snk
+*.pfx
+*.p12
+*.key
+*.pem
+*.private.txt
+*.publishsettings
+.env
+.env.*
+[Kk]eys/
+
+# ── Repo-specific ignores and re-includes (keep AFTER the broad ignores) ───
+# BenchmarkDotNet run output at the repo root (Evolution-Loop Tier-2 runs).
+BenchmarkDotNet.Artifacts/
+
+# Bootstrap feed: vendored packages so a standalone checkout resolves the
+# BuildSdk + Abstractions + TestInfrastructure without the workspace feed
+# (see eng/ci/NuGet.CI.config). The workflow that also used them is gone — this
+# workspace runs no CI, every gate is local.
+!eng/ci/feed/*.nupkg
+# eng/keys holds documentation only (no key material) — re-include the README.
+!eng/keys/
+eng/keys/*
+!eng/keys/README.md
+
+
+# Visual Studio "Stack Trace Explorer" scratch buffers: 0-byte temp editor files VS drops
+# in the solution root with a random suffix (e.g. StackTraceExplorerEditor.Fapykil). VS-generated, not ours.
+StackTraceExplorerEditor.*

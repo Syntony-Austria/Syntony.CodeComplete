@@ -1,0 +1,4 @@
+Überfällige Ausleihen
+m-1: 5 Tage überfällig, fällig am 03.11.2026, Gebühr € 0,50
+m-2: 16 Tage überfällig, fällig am 23.10.2026, Gebühr € 3,25
+Summe: € 3,75

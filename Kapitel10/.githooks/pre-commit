@@ -1,0 +1,17 @@
+#!/bin/sh
+# Fast checks on what is about to be committed. Bypass: git commit --no-verify
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$staged" ] && exit 0
+
+if git diff --cached -U0 | grep -E '^\+.*(ApiKey|Password|Secret)\s*='; then
+    echo "pre-commit: this looks like a secret. Use dotnet user-secrets." >&2
+    exit 1
+fi
+
+cs_files=$(echo "$staged" | grep '\.cs$')
+[ -z "$cs_files" ] && exit 0
+
+if ! dotnet format --verify-no-changes --include $cs_files; then
+    echo "pre-commit: style differs. Run dotnet format and stage the result." >&2
+    exit 1
+fi

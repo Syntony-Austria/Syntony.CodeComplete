@@ -1,0 +1,2 @@
+# Stops the search for parent .editorconfig files. Chapters that teach code style bring their own.
+root = true

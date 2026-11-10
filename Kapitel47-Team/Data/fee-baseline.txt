@@ -1,0 +1,4 @@
+# Fee arithmetic outside FeeSchedule that is older than the rule.
+# Delete a line when you fix the code. Never add one without a review.
+OverdueBoard.cs|$"{title}: {Math.Min(Math.Max(0, daysLate - 3) * 25, 2000)} cents";
+OverdueBoard.cs|daysLate.Sum(d => Math.Min(Math.Max(0, d - 3) * 25, 2000));

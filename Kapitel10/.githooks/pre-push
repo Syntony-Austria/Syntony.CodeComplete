@@ -1,0 +1,6 @@
+#!/bin/sh
+# The slower gate: build, tests and the coverage ratchet.
+pwsh -NoProfile -File eng/Test-Coverage.ps1 || {
+    echo "pre-push: gate failed, nothing was pushed." >&2
+    exit 1
+}

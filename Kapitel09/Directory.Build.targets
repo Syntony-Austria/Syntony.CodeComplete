@@ -1,0 +1,10 @@
+<Project>
+  <Target Name="CheckStrictSettings" BeforeTargets="CoreCompile">
+    <Error Condition="'$(TreatWarningsAsErrors)' != 'true'"
+           Code="LIB900"
+           Text="$(MSBuildProjectName) switched off TreatWarningsAsErrors." />
+    <Error Condition="'$(Nullable)' != 'enable'"
+           Code="LIB901"
+           Text="$(MSBuildProjectName) switched off Nullable." />
+  </Target>
+</Project>

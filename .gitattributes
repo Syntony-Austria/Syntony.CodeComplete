@@ -1,0 +1,142 @@
+###############################################################################
+# Syntony .gitattributes (canonical; seeded into every Syntony repository)
+#
+# References:
+# - Git Attributes: https://git-scm.com/docs/gitattributes
+# - GitHub Linguist: https://github.com/github/linguist
+###############################################################################
+
+* text=auto encoding=UTF-8
+
+###############################################################################
+# Source Code
+###############################################################################
+
+*.cs       text eol=crlf diff=csharp
+*.cshtml   text diff=html
+*.csx      text diff=csharp
+*.vb       text
+*.fs       text
+*.fsx      text
+
+###############################################################################
+# Scripts
+###############################################################################
+
+*.ps1      text eol=crlf
+*.psm1     text eol=crlf
+*.psd1     text eol=crlf
+*.sh       text eol=lf
+*.cmd      text eol=crlf
+*.bat      text eol=crlf
+
+###############################################################################
+# Configuration Files
+###############################################################################
+
+*.json         text eol=crlf
+*.jsonc        text
+*.xml          text eol=crlf
+*.config       text diff=xml
+*.xsd          text diff=xml
+*.resx         text diff=xml
+*.nuspec       text
+*.ruleset      text
+*.yml          text eol=lf
+*.yaml         text eol=lf
+*.ini          text
+.editorconfig  text eol=crlf
+.gitattributes text eol=crlf export-ignore
+.gitignore     text eol=crlf export-ignore
+.gitconfig     text export-ignore
+.globalconfig  text eol=crlf
+
+###############################################################################
+# Documentation
+###############################################################################
+
+*.md           text eol=crlf diff=markdown
+*.txt          text
+
+###############################################################################
+# Project Files - Special Merge Strategy
+###############################################################################
+
+*.sln          text eol=crlf merge=union
+*.slnx         text eol=crlf merge=union
+*.csproj       text eol=crlf merge=union
+*.vbproj       text eol=crlf merge=union
+*.vcxproj      text eol=crlf
+*.fsproj       text eol=crlf
+*.filters      text eol=crlf
+*.vcxitems     text eol=crlf
+
+# MSBuild files — keep xml diff drivers
+*.props        text eol=crlf merge=union diff=xml
+*.targets      text eol=crlf merge=union diff=xml
+*.tasks        text eol=crlf merge=union diff=xml
+*.msbuild      text eol=crlf diff=xml
+*.xaml         text diff=xml
+
+###############################################################################
+# GitHub Linguist
+###############################################################################
+
+*.Designer.cs           linguist-generated=true
+*.designer.cs           linguist-generated=true
+*.g.cs                  linguist-generated=true
+*.g.i.cs                linguist-generated=true
+*.Generated.cs          linguist-generated=true
+*.AssemblyInfo.cs       linguist-generated=true
+*.AssemblyAttributes.cs linguist-generated=true
+*.tt                    linguist-generated=true
+**/packages/**          linguist-vendored
+**/node_modules/**      linguist-vendored
+*.ps1                   linguist-vendored
+*.md                    linguist-documentation
+*.h                     linguist-language=C
+
+###############################################################################
+# Export Configuration
+###############################################################################
+
+.gitattributes          export-ignore
+.gitignore              export-ignore
+.gitconfig              export-ignore
+.editorconfig           export-ignore
+.globalconfig           export-ignore
+*.md                    export-ignore
+LICENSE                 export-ignore
+README*                 export-ignore
+
+###############################################################################
+# Diff Configuration
+###############################################################################
+
+*.dll                   -diff
+*.exe                   -diff
+*.zip                   -diff
+
+###############################################################################
+# Git Large File System (LFS)
+# The Sdk repo stores binary assets (icons, fonts, archives).
+###############################################################################
+
+*.7z    filter=lfs diff=lfs merge=lfs -text
+*.br    filter=lfs diff=lfs merge=lfs -text
+*.gz    filter=lfs diff=lfs merge=lfs -text
+*.tar   filter=lfs diff=lfs merge=lfs -text
+*.zip   filter=lfs diff=lfs merge=lfs -text
+*.gif   filter=lfs diff=lfs merge=lfs -text
+*.ico   filter=lfs diff=lfs merge=lfs -text
+*.jpg   filter=lfs diff=lfs merge=lfs -text
+*.png   filter=lfs diff=lfs merge=lfs -text
+*.psd   filter=lfs diff=lfs merge=lfs -text
+*.webp  filter=lfs diff=lfs merge=lfs -text
+*.woff2 filter=lfs diff=lfs merge=lfs -text
+*.pdf   filter=lfs diff=lfs merge=lfs -text
+*.exe   filter=lfs diff=lfs merge=lfs -text
+
+# claude files
+.claude/*        -text
+**/.claude/*     -text

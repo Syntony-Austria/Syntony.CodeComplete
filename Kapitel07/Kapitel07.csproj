@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <!-- Proof the style rules bite: dotnet build -p:StyleProbe=true must fail. -->
+    <Compile Remove="StyleProbe.cs" Condition="'$(StyleProbe)' != 'true'" />
+    <Compile Remove="BraceProbe.cs" Condition="'$(BraceProbe)' != 'true'" />
+  </ItemGroup>
+</Project>

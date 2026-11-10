@@ -1,0 +1,12 @@
+Fall	Code	Meldungen	nuspec	Gate
+expression	0	-	<license type="expression">MIT</license>	pass
+file	0	-	<license type="file">LICENSE.txt</license>	finding
+both	1	NU5033	-	-
+    NU5033: Invalid metadata. Cannot specify both a PackageLicenseExpression and a PackageLicenseFile.
+url	0	NU5125	<licenseUrl>https://opensource.org/license/mit</licenseUrl>	finding
+    NU5125: The 'licenseUrl' element will be deprecated. Consider using the 'license' element instead.
+unknown	0	NU5124	<license type="expression">MIT-like</license>	finding
+    NU5124: The license identifier 'MIT-like' is not recognized by the current toolset.
+lost	1	NU5030	-	-
+    NU5030: The license file 'LICENSE.txt' does not exist in the package.
+none	0	-	(none)	finding

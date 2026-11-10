@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Fixture for the docs gate only; never built. -->
+  <PropertyGroup>
+    <Version>1.4.0</Version>
+  </PropertyGroup>
+</Project>

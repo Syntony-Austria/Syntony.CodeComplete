@@ -1,0 +1,8 @@
+case | exit | codes
+default (net10.0: all) | 0 | NU1903
+NuGetAuditMode=direct | 0 | -
+TreatWarningsAsErrors | 1 | NU1903
+... plus WarningsNotAsErrors | 0 | NU1903
+NuGetAudit=false | 0 | -
+list --vulnerable | 0 | none
+list --vulnerable --include-transitive | 0 | High

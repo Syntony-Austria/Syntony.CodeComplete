@@ -1,0 +1,4 @@
+> dotnet test --filter Name=PrintTheMorning
+one lookup             mean   203  p50   151  p99   860  max  1314 ms
+book list, 30 titles   mean   731  p50   708  p99  1196  max  1314 ms
+one lookup over 500 ms: 13983 of 200000

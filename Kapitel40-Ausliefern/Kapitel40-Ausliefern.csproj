@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>Library.Lending</RootNamespace>
+    <!-- One number, three derived axes: see VersionTests. -->
+    <Version>1.3.2</Version>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <!-- Without this line FileVersion follows AssemblyVersion: 1.3.0.0. -->
+    <FileVersion Condition="'$(PinFileVersion)' != 'false'"
+                 >$(Version).0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration"
+                      Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions"
+                      Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing"
+                      Version="10.0.0" />
+    <PackageReference Include="NUnit" Version="4.4.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.2.0" />
+  </ItemGroup>
+  <!-- Deliberately red probes: dotnet test -p:Probe=true -->
+  <ItemGroup Condition="'$(Probe)' != 'true'">
+    <Compile Remove="Probe\**" />
+  </ItemGroup>
+</Project>

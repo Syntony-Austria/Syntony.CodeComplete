@@ -1,0 +1,7 @@
+> dotnet test --filter Name=PrintTheLoadTest
+workers   1    32 /s  p50    31  p99    46 ms  lambda*W   1,0
+workers   4   126 /s  p50    32  p99    45 ms  lambda*W   4,0
+workers   8   125 /s  p50    63  p99    79 ms  lambda*W   7,9
+workers  16   129 /s  p50   125  p99   127 ms  lambda*W  15,6
+workers  32   122 /s  p50   252  p99   295 ms  lambda*W  31,0
+workers  64   124 /s  p50   515  p99   579 ms  lambda*W  62,2

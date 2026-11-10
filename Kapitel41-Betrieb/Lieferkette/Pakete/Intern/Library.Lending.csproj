@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Same id and version in two feeds; only the origin text differs. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <PackageId>Library.Lending</PackageId>
+    <Version>1.2.0</Version>
+    <Authors>example</Authors>
+    <Description>Harmless test package, feed: intern.</Description>
+  </PropertyGroup>
+</Project>

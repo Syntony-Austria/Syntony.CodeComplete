@@ -1,0 +1,7 @@
+REPO_DIR = repository of this book, REPO_PATH = Quellen/Beispielcode
+co-authors False: 518 of 518 files have one author; authors: <author>
+co-authors True: 0 of 518 files have one author; authors: <model>, <author>
+
+REPO_DIR = D:/Syntony/Sys.Kernel, REPO_PATH = .
+co-authors False: 358 of 358 files have one author; authors: <author>
+co-authors True: 0 of 358 files have one author; authors: 7 model names, <author>

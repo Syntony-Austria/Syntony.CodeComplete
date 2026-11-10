@@ -1,0 +1,24 @@
+# Drei Wiederholungen von PrintTheLoadTest, 8. November 2026, .NET-SDK 10.0.403,
+# derselbe Rechner wie Ausgabe_Last.txt (Umsetzung des Lektorats zu Fassung 38).
+> dotnet test --no-build --filter Name=PrintTheLoadTest --logger "console;verbosity=detailed"
+# Lauf 1
+workers   1    32 /s  p50    32  p99    42 ms  lambda*W   1,0
+workers   4   128 /s  p50    32  p99    45 ms  lambda*W   4,0
+workers   8   127 /s  p50    63  p99    78 ms  lambda*W   7,9
+workers  16   127 /s  p50   125  p99   156 ms  lambda*W  15,6
+workers  32   129 /s  p50   249  p99   271 ms  lambda*W  31,1
+workers  64   128 /s  p50   499  p99   532 ms  lambda*W  62,1
+# Lauf 2
+workers   1    32 /s  p50    31  p99    43 ms  lambda*W   1,0
+workers   4   128 /s  p50    32  p99    42 ms  lambda*W   4,0
+workers   8   130 /s  p50    63  p99    77 ms  lambda*W   8,0
+workers  16   127 /s  p50   125  p99   143 ms  lambda*W  15,6
+workers  32   129 /s  p50   249  p99   255 ms  lambda*W  31,2
+workers  64   129 /s  p50   499  p99   518 ms  lambda*W  62,1
+# Lauf 3
+workers   1    32 /s  p50    31  p99    39 ms  lambda*W   1,0
+workers   4   128 /s  p50    31  p99    35 ms  lambda*W   4,0
+workers   8   130 /s  p50    62  p99    67 ms  lambda*W   7,9
+workers  16   130 /s  p50   125  p99   135 ms  lambda*W  15,6
+workers  32   128 /s  p50   250  p99   256 ms  lambda*W  31,1
+workers  64   128 /s  p50   500  p99   519 ms  lambda*W  62,1

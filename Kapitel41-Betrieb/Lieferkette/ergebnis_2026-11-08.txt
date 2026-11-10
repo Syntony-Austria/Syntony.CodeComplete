@@ -1,0 +1,47 @@
+case | run | exit | feed | codes
+ohne Zuordnung, frischer Ordner | 1 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 2 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 3 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 4 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 5 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 6 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 7 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 8 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 9 | 0 | intern | -
+ohne Zuordnung, frischer Ordner | 10 | 0 | intern | -
+ohne Zuordnung, fremd zuerst | 1 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 2 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 3 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 4 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 5 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 6 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 7 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 8 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 9 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 10 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 11 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 12 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 13 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 14 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 15 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 16 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 17 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 18 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 19 | 0 | fremd | -
+ohne Zuordnung, fremd zuerst | 20 | 0 | fremd | -
+ohne Zuordnung, intern leer | 1 | 0 | fremd | -
+mit Zuordnung, intern leer | 1 | 1 | - | NU1101
+mit Zuordnung, frischer Ordner | 1 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 2 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 3 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 4 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 5 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 6 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 7 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 8 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 9 | 0 | intern | -
+mit Zuordnung, frischer Ordner | 10 | 0 | intern | -
+ohne Zuordnung, fremd zuerst, Ordner A | 1 | 0 | fremd | -
+mit Zuordnung, derselbe Ordner A | 1 | 0 | fremd | -
+signatureValidationMode=require | 1 | 1 | - | NU3004
+signatureValidationMode=accept | 1 | 0 | intern | -

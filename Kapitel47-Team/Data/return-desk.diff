@@ -1,0 +1,15 @@
+diff --git a/src/ReturnDesk.cs b/src/ReturnDesk.cs
+new file mode 100644
+--- /dev/null
++++ b/src/ReturnDesk.cs
+@@ -0,0 +1,4 @@
++public sealed class ReturnDesk(TimeProvider clock)
++{
++    // TODO: move to FeeSchedule later
++    public int FeeOnReturn(DateOnly dueDate) => 0;
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -7,2 +7,3 @@
+ ## [Unreleased]
++- `ReturnDesk` computes the fee when a book comes back.

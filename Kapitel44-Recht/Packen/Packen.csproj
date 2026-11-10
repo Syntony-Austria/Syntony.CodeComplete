@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- One library, six ways to name its license: -p:Fall=... -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <PackageId>Library.Lending.LicenseDemo</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Library example</Authors>
+    <Description>Measures how NuGet treats license metadata.</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Fall)' == 'expression' Or '$(Fall)' == 'both'">
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Fall)' == 'file' Or '$(Fall)' == 'both'
+                            Or '$(Fall)' == 'lost'">
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Fall)' == 'url'">
+    <PackageLicenseUrl>https://opensource.org/license/mit</PackageLicenseUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Fall)' == 'unknown'">
+    <PackageLicenseExpression>MIT-like</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Fall)' == 'file' Or '$(Fall)' == 'both'">
+    <None Include="LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>

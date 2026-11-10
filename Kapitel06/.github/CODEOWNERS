@@ -1,0 +1,12 @@
+# The last matching pattern wins. Names are placeholders.
+*                       @your-org/library-team
+
+# Anything that can switch a gate off gets a second pair of eyes.
+.editorconfig           @your-org/build-owners
+BannedSymbols.txt       @your-org/build-owners
+Directory.Build.props   @your-org/build-owners
+*.csproj                @your-org/build-owners
+.github/                @your-org/build-owners
+
+# Fee rules are money. Someone who knows them should read the change.
+src/Lending/Fees/       @your-org/lending-experts

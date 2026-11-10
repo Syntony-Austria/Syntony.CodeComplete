@@ -1,0 +1,13 @@
+<Project>
+  <ItemGroup>
+    <GlobalPackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers"
+                            Version="3.3.4" />
+    <GlobalPackageReference Include="Microsoft.VisualStudio.Threading.Analyzers"
+                            Version="18.12.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageVersion Include="NUnit" Version="4.4.0" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="5.2.0" />
+  </ItemGroup>
+</Project>
