@@ -7,7 +7,7 @@ Jedes C#-Listing im Buch stammt aus einem Projekt in diesem Repository, das baut
 
 ## Voraussetzungen
 
-- .NET SDK 10 (gebaut mit 10.0.403; `dotnet --version` zeigt deine Fassung)
+- .NET SDK 11 (gemessen mit 10.0.403, zuletzt gebaut und getestet mit 11.0.100; `dotnet --version` zeigt deine Fassung)
 - Git auf der Kommandozeile
 - eine Netzverbindung, wenn NuGet die Pakete beim ersten Bau lädt
 - Python 3 nur, wenn du die Messungen mit den `Measure-*.py`-Skripten selbst wiederholen willst
